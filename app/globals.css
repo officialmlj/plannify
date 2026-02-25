@@ -1,0 +1,279 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Plannify Brand Colors */
+  --background: #f9f9f9;
+  --foreground: #1b1b47;
+  --card: #ffffff;
+  --card-foreground: #1b1b47;
+  --popover: #ffffff;
+  --popover-foreground: #1b1b47;
+  --primary: #2070ff;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f7fa;
+  --secondary-foreground: #1b1b47;
+  --muted: #f5f7fa;
+  --muted-foreground: #a9b4c4;
+  --accent: #2070ff;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  /* Made input fields transparent with glassmorphism effect */
+  --input: rgba(255, 255, 255, 0.05);
+  --ring: #2070ff;
+  --radius: 8px;
+  --success: #38d39f;
+
+  /* Surface colors */
+  --surface-1: #f9f9f9;
+  --surface-2: #ffffff;
+  --surface-3: #f5f7fa;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --card: #1a1a1a;
+  --card-foreground: #ffffff;
+  --popover: #1a1a1a;
+  --popover-foreground: #ffffff;
+  --primary: #2070ff;
+  --primary-foreground: #ffffff;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #ffffff;
+  --muted: #1a1a1a;
+  --muted-foreground: #a0a0a0;
+  --accent: #2070ff;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #2a2a2a;
+  /* Made dark mode input fields transparent as well */
+  --input: rgba(255, 255, 255, 0.05);
+  --ring: #2070ff;
+}
+
+@theme inline {
+  --font-sans: "Inter", "Inter Fallback", system-ui, -apple-system, sans-serif;
+  --font-heading: "Poppins", "Poppins Fallback", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "IBM Plex Mono Fallback";
+  --font-serif: "Vollkorn", "Vollkorn Fallback";
+
+  /* Adding invitation font variables */
+  --font-poppins: var(--font-poppins);
+  --font-playfair: var(--font-playfair);
+  --font-dancing: var(--font-dancing);
+  --font-bebas: var(--font-bebas);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: 8px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 16px;
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    /* Updated background to dark navy for Plannify design */
+    background: #09091c;
+    background-attachment: fixed;
+    color: var(--foreground);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
+    color: #1b1b47;
+    font-family: "Poppins", system-ui, -apple-system, sans-serif;
+  }
+
+  p {
+    @apply text-base;
+    line-height: 150%;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .theme-party {
+    --theme-primary: #2070ff;
+    --theme-accent: #38d39f;
+    --theme-gradient-from: #2070ff;
+    --theme-gradient-to: #38d39f;
+  }
+
+  .theme-vacation {
+    --theme-primary: #2070ff;
+    --theme-accent: #38d39f;
+    --theme-gradient-from: #2070ff;
+    --theme-gradient-to: #38d39f;
+  }
+
+  .theme-study {
+    --theme-primary: #8b5cf6;
+    --theme-accent: #a78bfa;
+    --theme-gradient-from: #8b5cf6;
+    --theme-gradient-to: #a78bfa;
+  }
+
+  .theme-business {
+    --theme-primary: #64748b;
+    --theme-accent: #94a3b8;
+    --theme-gradient-from: #64748b;
+    --theme-gradient-to: #94a3b8;
+  }
+
+  .theme-sport {
+    --theme-primary: #f97316;
+    --theme-accent: #fb923c;
+    --theme-gradient-from: #f97316;
+    --theme-gradient-to: #fb923c;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(229, 231, 235, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .btn-pop:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+
+  button,
+  a {
+    transition: all 0.2s ease;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out;
+  }
+
+  /* Text Styles */
+  .text-stroke {
+    -webkit-text-stroke: 2px #2070ff;
+    -webkit-text-fill-color: transparent;
+    paint-order: stroke fill;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(32, 112, 255, 0.3), 0 0 20px rgba(32, 112, 255, 0.2);
+  }
+
+  .text-3d {
+    text-shadow:
+      1px 1px 0 rgba(0, 0, 0, 0.1),
+      2px 2px 0 rgba(0, 0, 0, 0.1),
+      3px 3px 0 rgba(0, 0, 0, 0.1),
+      4px 4px 0 rgba(0, 0, 0, 0.1),
+      5px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Custom fonts for invitation designer */
+  .font-cursive {
+    font-family: "Dancing Script", cursive;
+  }
+
+  .font-display {
+    font-family: "Bebas Neue", sans-serif;
+  }
+
+  /* Added handwriting font for polaroid captions */
+  .font-handwriting {
+    font-family: "Permanent Marker", "Caveat", "Comic Sans MS", cursive;
+    letter-spacing: 0.5px;
+  }
+
+  /* Adding font utility classes for invitation designer */
+  .font-poppins {
+    font-family: var(--font-poppins), sans-serif;
+  }
+
+  .font-playfair {
+    font-family: var(--font-playfair), serif;
+  }
+
+  .font-dancing {
+    font-family: var(--font-dancing), cursive;
+  }
+
+  .font-bebas {
+    font-family: var(--font-bebas), sans-serif;
+  }
+
+  /* Polaroid photo effects */
+  .shadow-3xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .confetti-piece {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: #2070ff;
+    top: -10px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 50%;
+    box-shadow: 0 0 10px currentColor;
+  }
+}
